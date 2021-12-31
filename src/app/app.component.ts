@@ -1,17 +1,29 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {DocumentService} from "./document.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
+    selector: 'app-root',
+    templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'pastebin';
-  exampleCode = `compat = when(version) {
-            "1.8.8" -> Compat1_8()
-            "1.9.4" -> Compat1_9()
-            "1.10.2" -> Compat1_10()
-            else -> {
-                throw IllegalStateException("Compat for version \`$version\` is unavailable")
-            }
-        }`;
+export class AppComponent implements OnInit {
+    title = 'pastebin';
+    language?: string;
+
+    constructor(public documentService: DocumentService) {
+    }
+
+
+    async ngOnInit() {
+        let documentId = window.location.search;
+        if (documentId == undefined || documentId.length < 1) return;
+
+        let [id, lang] = documentId.substring(1).split(".")
+
+        let status = await this.documentService.loadDocument(id);
+        if (status != 200) {
+            // TODO
+            window.alert("Error " + status);
+        }
+        this.language = lang;
+    }
 }

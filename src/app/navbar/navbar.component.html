@@ -1,1 +1,8 @@
-<span>navbar go brrr</span>
+<span *ngIf="documentService.document.key == ''; else readOnly">
+    New | Save
+</span>
+<ng-template #readOnly>
+    {{documentService.document.key}} |
+    Make a copy |
+    <a href="/raw/{{documentService.document.key}}">Raw</a>
+</ng-template>

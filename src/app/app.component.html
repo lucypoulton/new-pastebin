@@ -1,2 +1,2 @@
 <navbar></navbar>
-<editor editable language="java"></editor>
+<editor [editable]="documentService.document.key == ''" [(model)]="documentService.document.data" [language]="language"></editor>

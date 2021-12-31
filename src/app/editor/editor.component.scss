@@ -31,7 +31,8 @@ textarea {
 }
 
 textarea, pre {
-  margin-left: 3em;
+  padding-left: 3em;
+  box-sizing: border-box;
 }
 
 .numbers {
