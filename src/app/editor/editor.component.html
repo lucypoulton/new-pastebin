@@ -1,0 +1,7 @@
+<textarea #input *ngIf="isEditable()" [value]="content" (input)="onTextEdit(input.value)" tabindex="0" (keydown.Tab)="handleTab($event)"></textarea>
+<pre><code [innerHTML]="highlightedContent">
+</code>
+</pre>
+<div class="numbers">
+  <div *ngFor="let _ of content.split('\n'); index as i">{{i + 1}}</div>
+</div>

@@ -1,0 +1,27 @@
+@use "_colours";
+@use "_fonts";
+
+.hljs-comment {
+  @include fonts.sans;
+  color: colours.$light-secondary;
+}
+
+.hljs-keyword {
+  color: colours.$blue;
+}
+
+.hljs-title {
+  color: colours.$green;
+}
+
+.hljs-built_in {
+  color: colours.$green;
+}
+
+.hljs-number, .hljs-string, .hljs-literal {
+  color: colours.$yellow;
+}
+
+.hljs-variable {
+  color: colours.$pink;
+}

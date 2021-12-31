@@ -1,0 +1,8 @@
+@use "src/styles/_colours";
+
+:host {
+  display: block;
+  background-color: colours.$really-dark;
+  color: colours.$light-primary;
+  padding: 1em;
+}

@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro&family=Roboto+Mono&display=swap');
+
+@mixin mono {
+  font-family: 'Roboto Mono', monospace;
+}
+
+@mixin sans {
+  font-family: 'Readex Pro', sans-serif;
+}
+
+:root {
+  @include sans;
+}

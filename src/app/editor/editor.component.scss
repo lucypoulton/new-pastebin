@@ -1,0 +1,42 @@
+@use "src/styles/_fonts";
+@use "src/styles/_colours";
+
+:host {
+  @include fonts.mono;
+  color: colours.$light-primary;
+  display: block;
+
+  * {
+    @include fonts.mono;
+  }
+  position: relative;
+}
+
+textarea {
+  @include fonts.mono;
+  resize: none;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+
+  position: absolute;
+  font-size: 1em;
+
+  border: none;
+  outline: none; /* for msedge */
+
+  background: transparent;
+  color: transparent;
+  caret-color: colours.$light-primary;
+}
+
+textarea, pre {
+  margin-left: 3em;
+}
+
+.numbers {
+  position: absolute;
+  top: 0;
+  margin-left: 1em;
+  color: colours.$light-secondary;
+}

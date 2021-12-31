@@ -1,0 +1,8 @@
+@use "_colours";
+@use "_fonts";
+@use "_hljs";
+
+body {
+  margin: 0;
+  background-color: colours.$dark-primary;
+}
