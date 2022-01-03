@@ -1,0 +1,7 @@
+<span (click)="extended = true">{{hightlightService.language || "Auto" }}</span>
+<div class="extended" *ngIf="extended" (blur)="extended = false">
+    <input #input (input)="updateSearch(input.value)" placeholder="Search">
+    <div *ngFor="let lang of suggestedLanguages" (click)="setLanguage(lang)">
+        {{lang}}
+    </div>
+</div>

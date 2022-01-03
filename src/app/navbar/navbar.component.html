@@ -1,8 +1,17 @@
-<span *ngIf="documentService.document.key == ''; else readOnly">
-    New | Save
+<span *ngIf="lockControls; else notLocked">
+    Loading...
 </span>
-<ng-template #readOnly>
-    {{documentService.document.key}} |
-    Make a copy |
-    <a href="/raw/{{documentService.document.key}}">Raw</a>
+<ng-template #notLocked>
+<span *ngIf="documentService.document.key == ''; else readOnly">
+    <a (click)="documentService.newDocument()">New</a>
+    <a (click)="save()">Save</a>
+</span>
+    <ng-template #readOnly>
+        {{documentService.document.key}}
+        <a (click)="newDocument()">New</a>
+        <a (click)="documentService.makeCopy()">Make a copy</a>
+        <a href="/raw/{{documentService.document.key}}">Raw</a>
+    </ng-template>
 </ng-template>
+<a (click)="about()">About</a>
+<app-language-dropdown></app-language-dropdown>

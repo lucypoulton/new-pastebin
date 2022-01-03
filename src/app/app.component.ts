@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DocumentService} from "./document.service";
+import {HighlightService} from "./highlight.service";
 
 @Component({
     selector: 'app-root',
@@ -7,9 +8,8 @@ import {DocumentService} from "./document.service";
 })
 export class AppComponent implements OnInit {
     title = 'pastebin';
-    language?: string;
 
-    constructor(public documentService: DocumentService) {
+    constructor(public documentService: DocumentService, public highlightService: HighlightService) {
     }
 
 
@@ -24,6 +24,6 @@ export class AppComponent implements OnInit {
             // TODO
             window.alert("Error " + status);
         }
-        this.language = lang;
+        this.highlightService.language = lang;
     }
 }

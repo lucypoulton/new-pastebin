@@ -1,2 +1,4 @@
 <navbar></navbar>
-<editor [editable]="documentService.document.key == ''" [(model)]="documentService.document.data" [language]="language"></editor>
+<editor [editable]="documentService.document.key == ''"
+        [(model)]="documentService.document.data"
+        [language]="highlightService.language"></editor>

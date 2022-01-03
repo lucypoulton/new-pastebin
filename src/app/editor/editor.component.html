@@ -1,4 +1,6 @@
-<textarea #input *ngIf="editable" [value]="model" (input)="model = input.value" tabindex="0" (keydown.Tab)="handleTab($event)"></textarea>
+<textarea #input *ngIf="editable" [value]="model" (input)="model = input.value"
+          tabindex="0" (keydown.Tab)="handleTab($event)"
+placeholder="Set the language in the top-right corner, then type here..."></textarea>
 <pre><code [innerHTML]="highlightedContent">
 </code>
 </pre>

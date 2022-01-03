@@ -6,3 +6,22 @@
   color: colours.$light-primary;
   padding: 1em;
 }
+
+app-language-dropdown {
+  float: right;
+}
+
+a {
+  color: colours.$light-primary;
+  margin: 0 0.2em;
+  background-color: colours.$dark-primary;
+  padding: 0.5em;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid colours.$dark-secondary;
+
+  &:hover {
+    cursor: pointer;
+    color: colours.$light-secondary;
+  }
+}

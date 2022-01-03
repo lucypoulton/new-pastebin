@@ -1,0 +1,25 @@
+@use "src/styles/_colours";
+@use "src/styles/_fonts";
+
+:host {
+  display: inline;
+}
+
+.extended {
+  position: absolute;
+  right: 1em;
+  top: 4em;
+  background-color: colours.$really-dark;
+
+  div {
+    padding: 0.2em 0;
+  }
+
+  input {
+    @include fonts.mono;
+    color: colours.$light-primary;
+    border: none;
+    background: transparent;
+    font-size: 1em;
+  }
+}
